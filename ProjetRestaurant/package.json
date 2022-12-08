@@ -1,0 +1,13 @@
+{
+  "name": "sass-course",
+  "description": "description",
+  "authors": "Greg",
+  "version": "1.0.0",
+  "main": "pathToMain",
+  "dependencies": {
+    
+  },
+  "scripts":{
+    "sass": "sass --watch ./sass/main.scss ./public/css/style.css"
+  }
+}
