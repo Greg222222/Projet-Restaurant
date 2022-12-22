@@ -8,6 +8,7 @@
     
   },
   "scripts":{
-    "sass": "sass --watch ./sass/main.scss ./public/css/style.css"
+    "sass": "sass --watch ./sass/main.scss ./public/css/style.css",
+    "ssass": "sass --watch ./sass/restaurants.scss ./public/css/styles.css"
   }
 }

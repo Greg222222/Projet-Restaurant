@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+}
+
+.search,
+.logo-header,
+.concept,
+header,
+.exploration-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  flex-direction: column;
+}
+header .logo-header {
+  width: 150px;
+}
+
+.exploration-button {
+  background-color: #FF79DA;
+  border-radius: 20px;
+}
+.exploration-button__hover {
+  background-color: blue;
+}
+
+.ol {
+  list-style-type: none;
+}
+.ol__li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ol__li__number {
+  background-color: #9356DC;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  margin: 0;
+}
+main .fonctionnement {
+  background-color: #fff;
+}
+main .restaurants {
+  background-color: whitesmoke;
+}
+main .blocks .block {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 15px 15px 0 0;
+  margin: 10px;
+}
+main .blocks .block__img {
+  width: 244px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+main .blocks .block__text-heart {
+  display: flex;
+  justify-content: space-between;
+}
+main .blocks .block__text-heart__text h3 {
+  margin: 10px 0 0 10px;
+}
+main .blocks .block__text-heart__text p {
+  margin: 0 0 10px 10px;
+}
+main .blocks .block__text-heart__heart {
+  margin: 20px 20px 0 0;
+}
+
+footer {
+  background-color: grey;
+  color: #fff;
+  margin: 0;
+}
+
+.logo-footer {
+  width: 100px;
+  color: #fff;
+}/*# sourceMappingURL=main.css.map */

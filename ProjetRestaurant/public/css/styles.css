@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+}
+
+header .logo-arrow {
+  display: flex;
+}
+header .logo-arrow__arrow {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 0 20px;
+}
+header .logo-arrow__logo {
+  width: 50%;
+  margin: 10px 0 10px 15%;
+}
+
+/*# sourceMappingURL=styles.css.map */

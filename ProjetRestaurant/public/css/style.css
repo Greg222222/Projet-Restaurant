@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .search,
@@ -20,15 +21,15 @@ header .logo-header {
   width: 150px;
 }
 header .search {
-  background: #f5f5f5;
+  background: #e8e8e8;
   width: 100%;
 }
-header .search textarea {
+header .search input {
   resize: none;
   height: 20px;
   border: none;
   margin: 10px;
-  background-color: #f5f5f5;
+  background-color: #e8e8e8;
   width: 150px;
 }
 
@@ -40,9 +41,11 @@ header .search textarea {
   margin: 20px 0 40px 20%;
   color: #fff;
   border: 0;
+  transition: all 300ms;
 }
 .exploration-button:hover {
-  background-color: #bc95e9;
+  background: linear-gradient(170deg, #ff79da, #9356dc);
+  cursor: pointer;
 }
 
 main {
@@ -80,6 +83,7 @@ main .working .ol__li {
   padding: 20px;
   margin: 10px 10px 10px 20px;
   border-radius: 20px;
+  box-shadow: #f5f5f5 1px 1px 2px 2px;
 }
 main .working .ol__li__number {
   background-color: #9356DC;
@@ -95,7 +99,12 @@ main .working .ol__li--div {
   margin-left: -30px;
   padding-right: 50px;
 }
-main .working .ol__li .pink {
+main .working .ol__li:hover {
+  background-color: #f2eafb;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+main .working .ol__li:hover i {
   color: #9356DC;
 }
 main .restaurants {
@@ -109,6 +118,22 @@ main .blocks .block {
   flex-direction: column;
   border-radius: 15px;
   margin: 10px 20px 20px 20px;
+  box-shadow: #e8e8e8 1px 1px 2px 2px;
+  scale: 1;
+}
+main .blocks .block__new {
+  width: 60px;
+  position: absolute;
+  background: #99E2D0;
+  text-align: center;
+  padding: 10px;
+  right: 5%;
+  top: 10%;
+  color: #278870;
+}
+main .blocks .block:hover {
+  cursor: pointer;
+  transform: scale(1.03);
 }
 main .blocks .block__img {
   width: 100%;
@@ -121,8 +146,33 @@ main .blocks .block__text-heart {
   justify-content: space-between;
   background-color: #fff;
   border-radius: 0 0 15px 15px;
+  width: 100%;
+}
+main .blocks .block__text-heart__text-2 {
+  position: relative;
+  width: 50px;
+  margin-top: 20px;
+}
+main .blocks .block__text-heart__text-2__heart {
+  position: absolute;
+}
+main .blocks .block__text-heart__text-2__heart-full {
+  position: absolute;
+  background: #9356DC;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  scale: 1;
+}
+main .blocks .block__text-heart__text-2__heart-full:hover {
+  opacity: 1;
+  transform: scale(1.5);
 }
 main .blocks .block__text-heart__text {
+  flex-grow: 1;
   padding: 5px 0 5px 5px;
 }
 main .blocks .block__text-heart__text h3 {
@@ -135,18 +185,22 @@ main .blocks .block__text-heart__heart {
   margin: 20px 20px 0 0;
 }
 main .blocks .block__text-heart__heart:hover {
-  color: #9356DC;
+  color: transparent;
+  background: #9356DC;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer {
-  background-color: grey;
+  background-color: #404040;
   margin: 0;
   padding: 20px;
 }
 .footer .logo-footer {
   width: 100px;
-  color: #fff;
   padding-bottom: 10px;
+  font-family: "Shrikhand", sans-serif;
 }
 .footer__ul {
   list-style-type: none;

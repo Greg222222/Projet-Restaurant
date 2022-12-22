@@ -1,6 +1,7 @@
 @import "directory/utils/variables";
 * {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 .search,
 .logo-header,
@@ -19,14 +20,14 @@ header {
     width: 150px;
   }
   .search {
-    background: $colour-whitesmoke;
+    background: darken($color: $colour-whitesmoke, $amount: 5%) ;
     width: 100%;
-    textarea {
+    input {
       resize: none;
       height: 20px;
       border: none;
       margin: 10px;
-      background-color: $colour-whitesmoke;
+      background-color: darken($color: $colour-whitesmoke, $amount: 5%);
       width: 150px;
     }
   }
@@ -40,8 +41,10 @@ header {
   margin: 20px 0 40px 20%;
   color: $colour-white;
   border: 0;
+  transition: all 300ms;
   &:hover {
-    background-color: lighten($color: $colour-primary, $amount: 15%);
+    background: linear-gradient(170deg, #ff79da, #9356dc);
+    cursor: pointer;
   }
 }
 
@@ -77,6 +80,7 @@ main {
         padding: 20px;
         margin: 10px 10px 10px 20px;
         border-radius: 20px;
+        box-shadow: $colour-whitesmoke 1px 1px 2px 2px;
         &__number {
           background-color: $colour-primary;
           color: $colour-white;
@@ -86,13 +90,19 @@ main {
           display: flex;
           align-items: center;
           justify-content: center;
+        
         }
         &--div {
           margin-left: -30px;
           padding-right: 50px;
         }
-        .pink {
-          color: $colour-primary;
+        &:hover {
+          i {
+            color: $colour-primary;
+          }
+          background-color: lighten($color: $colour-primary, $amount: 35%);
+          transition-duration: 0.5s;
+          cursor: pointer;
         }
       }
     }
@@ -109,6 +119,22 @@ main {
       flex-direction: column;
       border-radius: 15px;
       margin: 10px 20px 20px 20px;
+      box-shadow: darken($color: $colour-whitesmoke, $amount: 5%) 1px 1px 2px 2px;
+      scale: 1;
+      &__new {
+        width: 60px;
+        position: absolute;
+        background: $colour-tertiary;
+        text-align: center;
+        padding: 10px;
+        right: 5%;
+        top: 10%;
+        color: darken($color: $colour-tertiary, $amount: 40%);
+      }
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+      }
       &__img {
         width: 100%;
         height: 200px;
@@ -120,7 +146,32 @@ main {
         justify-content: space-between;
         background-color: $colour-white;
         border-radius: 0 0 15px 15px;
+        width: 100%;
+        &__text-2 {
+          position: relative;
+          width: 50px;
+          margin-top: 20px;
+          &__heart {
+            position: absolute;
+          }
+          &__heart-full {
+            position: absolute;
+            background: $colour-primary;
+            background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+            cursor: pointer;
+            transition: all 0.2s;
+            scale: 1;
+            &:hover {
+              opacity: 1;
+              transform: scale(1.5);
+            }
+          }
+        }
         &__text {
+          flex-grow: 1;
           h3 {
             margin: 10px 0 0 10px;
           }
@@ -132,7 +183,11 @@ main {
         &__heart {
           margin: 20px 20px 0 0;
           &:hover {
-            color: $colour-primary;
+            color: transparent;
+            background: $colour-primary;
+            background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
           }
         }
       }
@@ -140,13 +195,13 @@ main {
   }
 }
 .footer {
-  background-color: grey;
+  background-color: darken($color: $colour-footer, $amount: 25%);
   margin: 0;
   padding: 20px;
   .logo-footer {
     width: 100px;
-    color: $colour-white;
     padding-bottom: 10px;
+    font-family: 'Shrikhand', sans-serif;
   }
   &__ul {
     list-style-type: none;
