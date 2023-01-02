@@ -3,6 +3,39 @@
   font-family: "Roboto", sans-serif;
 }
 
+/*
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .spin { 
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 10px solid $colour-secondary;
+    border-radius: 50%;
+    border-top-color: $colour-primary;
+    animation: spin 5s ease-in-out 5s ;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+*/
 header .header {
   display: flex;
 }
@@ -32,6 +65,10 @@ main {
   order: 2;
   border-radius: 30px 30px 0 0;
 }
+main .all-blocks {
+  display: flex;
+  flex-direction: column;
+}
 main .category {
   margin-left: 15px;
   width: 50px;
@@ -50,41 +87,72 @@ main .title__h {
   padding: 20px 0 20px 10px;
   font-family: "Shrikhand", sans-serif;
 }
-main .title__heart {
-  padding: 30px 30px 0 0;
+main .title__hearts {
+  position: relative;
+  width: 100px;
+  margin-top: 35px;
+}
+main .title__hearts__empty-heart {
+  position: absolute;
+}
+main .title__hearts__heart-full {
+  position: relative;
+  background: #9356DC;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  scale: 1;
+}
+main .title__hearts__heart-full:hover {
+  opacity: 1;
+  transform: scale(1.5);
 }
 main .blocks__block {
   margin: 20px;
   display: flex;
   background: #fff;
   border-radius: 10px;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+main .blocks__block:hover .blocks__block__animation {
+  width: 75px;
 }
 main .blocks__block__text {
   padding: 10px;
+  flex-grow: 1;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+main .blocks__block__text h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .blocks__block__text p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .blocks__block__price {
   padding: 20px 0 10px 10px;
-  position: absolute;
-  right: 30px;
   text-align: center;
-}
-main .blocks__block__price:hover {
-  right: 100px;
-}
-main .blocks__block__price:hover + .blocks__block__animation {
-  opacity: 1;
-  cursor: pointer;
-  width: 50px;
+  width: 100px;
 }
 main .blocks__block__animation {
-  opacity: 0;
+  padding: 0;
   width: 0;
   background: #99E2D0;
-  position: absolute;
-  right: 20px;
+  overflow: hidden;
   height: 60px;
   border: 0;
   border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  transition-duration: 0.4s;
 }
 main .button {
   display: flex;
@@ -100,6 +168,11 @@ main .button .exploration-button {
   cursor: pointer;
   border: none;
   scale: 1;
+}
+@media (min-width: 500px) {
+  main .button .exploration-button {
+    color: red;
+  }
 }
 main .button .exploration-button:hover {
   transform: scale(1.2);
