@@ -26,6 +26,9 @@ header {
   .search {
     background: darken($color: $colour-whitesmoke, $amount: 5%) ;
     width: 100%;
+    @media (min-width:1000px) {
+      height: 70px;  
+    }
     input {
       resize: none;
       height: 20px;
@@ -48,9 +51,14 @@ header {
   transition: all 300ms;
   background: $colour-gradient;
   cursor: pointer;
+  scale: 1;
+  box-shadow: 2px 0px 2px 2px $colour-secondary;
   &:hover {
-    background-color: lighten($color: #ff79da, $amount: 50%)
+    background-color: lighten($color: #ff79da, $amount: 50%);
+    transform: scale(1.2);
+    box-shadow: 3px 0px 3px 3px $colour-secondary;    
   }
+  
 }
 
 main {
@@ -78,6 +86,10 @@ main {
     .ol {
       list-style-type: none;
       padding-left: 10px;
+    @media (min-width:1000px) {
+      display: flex;
+      flex-direction: row;
+    }
       &__li {
         display: flex;
         align-items: center;
@@ -119,6 +131,13 @@ main {
     }
   }
   .blocks {
+    @media (min-width:1000px) {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
     .block {
       display: flex;
       flex-direction: column;
@@ -128,6 +147,10 @@ main {
       scale: 1;
       color: black;
       text-decoration: none;
+      
+      @media (min-width:1000px) {
+        width: 300px;
+      }
       &__new {
         width: 60px;
         position: absolute;

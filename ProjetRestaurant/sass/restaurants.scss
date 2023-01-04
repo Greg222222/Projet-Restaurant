@@ -41,25 +41,36 @@ header {
   .header {
     display: flex;
   }
-  .logo-arrow {
+  .logo-header {
     display: flex;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    @media (min-width: 1000px) {
+    height: 76px;
+    }
+  }
+  .logo-arrow {
     text-decoration: none;
+    justify-content: center;
+    align-items: center;
     &__arrow {
-      display: flex;
       align-items: center;
       padding: 30px;
       scale: 1;
       color: black;
       &:hover {
         scale: 1.5;
+        transition-duration: 0.2s;
       }
-    }
-    &__logo {
-      width: 50%;
     }
   }
   .background-image {
     width: 100%;
+    @media (min-width: 1000px) {
+      height: 500px;
+      
+    }
   }
 } 
 
@@ -70,6 +81,10 @@ main {
   .all-blocks {
     display: flex;
     flex-direction: column;
+    @media (min-width: 1000px){
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
   .category {
     margin-left: 15px;
@@ -84,10 +99,15 @@ main {
     border-radius: 30px 30px 0 0;
     margin-top: -40px;
     justify-content: space-between;
+    @media (min-width: 1000px) {
+      justify-content: center;
+      text-align: center;
+    }
     &__h {
       padding: 20px 0 20px 10px;
       font-family: "Shrikhand", sans-serif;
-    }
+      }
+    
     &__hearts {
       position: relative;
       width: 100px;
@@ -113,12 +133,13 @@ main {
     }
   }
   .blocks {
+    transition: all 2s;
     &__block {
       margin: 20px;
       display: flex;
       background: $colour-white;
       border-radius: 10px;
-      
+      max-width: 100%;
       text-overflow: ellipsis;
       cursor: pointer;
         &:hover .blocks__block__animation {
@@ -151,7 +172,7 @@ main {
         width: 0;
         background: $colour-tertiary;
         overflow: hidden;
-        height: 60px;
+        height: 62px;
         border: 0;
         border-radius: 0 10px 10px 0;
         cursor: pointer;
@@ -172,13 +193,12 @@ main {
       background: linear-gradient(170deg, #ff79da, #9356dc);
       cursor: pointer;
       border: none;
+      box-shadow: 2px 0px 2px 2px $colour-secondary;
       scale: 1;
-      @media (min-width: 500px){
-      color: red;
-    }
       &:hover {
         transform: scale(1.2);
         transition-duration: 0.15s;
+        box-shadow: 3px 0px 3px 3px $colour-secondary;
       }
     }
   }
@@ -186,7 +206,13 @@ main {
 .footer {
   background-color: darken($color: $colour-footer, $amount: 25%);
   margin: 0;
-  padding: 20px;
+  padding: 20px; /*
+  @media (min-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  } */
   .logo-footer {
     width: 100px;
     padding-bottom: 10px;
