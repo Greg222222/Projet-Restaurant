@@ -14,7 +14,7 @@ header .logo-header {
 }
 @media (min-width: 1000px) {
   header .logo-header {
-    height: 76px;
+    height: 60px;
   }
 }
 header .logo-arrow {
