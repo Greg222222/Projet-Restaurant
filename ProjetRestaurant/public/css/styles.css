@@ -3,7 +3,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-/*
 .loader {
   position: fixed;
   width: 100%;
@@ -13,18 +12,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .spin { 
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border: 10px solid $colour-secondary;
-    border-radius: 50%;
-    border-top-color: $colour-primary;
-    animation: spin 5s ease-in-out 5s ;
-    -webkit-animation: spin 1s ease-in-out infinite;
-  }
+  animation: fadeOut 5s forwards;
+}
+.loader .spin {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 10px solid #FF79DA;
+  border-radius: 50%;
+  border-top-color: #9356DC;
+  animation: spin ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
 @keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
@@ -35,7 +48,6 @@
     -webkit-transform: rotate(360deg);
   }
 }
-*/
 header .header {
   display: flex;
 }
@@ -82,11 +94,12 @@ main {
 main .all-blocks {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  flex-wrap: nowrap;
 }
 @media (min-width: 1000px) {
   main .all-blocks {
     flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 main .category {
@@ -138,6 +151,13 @@ main .title__hearts__heart-full:hover {
 }
 main .blocks {
   transition: all 2s;
+  margin: 0 20px;
+}
+@media (min-width: 992px) {
+  main .blocks {
+    min-width: calc(33% - 40px);
+    max-width: calc(33% - 40px);
+  }
 }
 main .blocks__block {
   margin: 20px;
@@ -194,7 +214,7 @@ main .button .exploration-button {
   width: 200px;
   color: #fff;
   border-radius: 50px;
-  background: linear-gradient(170deg, #ff79da, #9356dc);
+  background: linear-gradient(170deg, #9356DC 0%, #FF79DA 50%);
   cursor: pointer;
   border: none;
   box-shadow: 2px 0px 2px 2px #FF79DA;
@@ -204,6 +224,9 @@ main .button .exploration-button:hover {
   transform: scale(1.2);
   transition-duration: 0.15s;
   box-shadow: 3px 0px 3px 3px #FF79DA;
+  opacity: 0.8;
+  background: linear-gradient(170deg, #a86ee0 0%, #b493de 33%, #ff93e1 100%);
+  box-shadow: 0px 2px 10px 0px #525252;
 }
 
 .footer {
