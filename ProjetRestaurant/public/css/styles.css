@@ -12,7 +12,7 @@ header .logo-header {
   width: 100%;
   margin-top: 20px;
 }
-@media (min-width: 1000px) {
+@media (min-width: 992px) {
   header .logo-header {
     height: 60px;
   }
@@ -34,8 +34,9 @@ header .logo-arrow__arrow:hover {
 }
 header .background-image {
   width: 100%;
+  object-fit: cover;
 }
-@media (min-width: 1000px) {
+@media (min-width: 992px) {
   header .background-image {
     height: 500px;
   }
@@ -52,7 +53,7 @@ main .all-blocks {
   width: 100%;
   flex-wrap: nowrap;
 }
-@media (min-width: 1000px) {
+@media (min-width: 992px) {
   main .all-blocks {
     flex-direction: row;
   }
@@ -71,7 +72,7 @@ main .title {
   margin-top: -40px;
   justify-content: space-between;
 }
-@media (min-width: 1000px) {
+@media (min-width: 992px) {
   main .title {
     justify-content: center;
     text-align: center;
@@ -116,19 +117,23 @@ main .blocks {
 }
 main .blocks .animation-first {
   animation: spawn 1s 0s forwards;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
+  opacity: 0;
 }
 main .blocks .animation-second {
   animation: spawn 1s 0.25s forwards;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
+  opacity: 0;
 }
 main .blocks .animation-third {
   animation: spawn 1s 0.5s forwards;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
+  opacity: 0;
 }
 main .blocks .animation-fourth {
   animation: spawn 1s 0.75s forwards;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
+  opacity: 0;
 }
 main .blocks__block {
   margin: 20px;
@@ -183,7 +188,7 @@ main .blocks__block__animation {
     opacity: 1;
   }
   100% {
-    transform: translateX(0%);
+    transform: translateY(0%);
   }
 }
 main .button {

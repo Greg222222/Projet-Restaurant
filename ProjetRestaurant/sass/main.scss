@@ -67,7 +67,7 @@ header {
   .search {
     background: darken($color: $colour-whitesmoke, $amount: 5%) ;
     width: 100%;
-    @media (min-width:1000px) {
+    @media (min-width:992px) {
       height: 70px;  
     }
     input {
@@ -81,25 +81,38 @@ header {
   }
 }
 
-.exploration-button {
-  background-color: $colour-primary;
-  border-radius: 20px;
-  height: 40px;
-  width: 60%;
-  margin: 20px 0 40px 20%;
-  color: $colour-white;
-  border: 0;
-  transition: all 300ms;
-  background: $colour-gradient;
-  cursor: pointer;
-  scale: 1;
-  border: none;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  &:hover {
-    background-color: lighten($color: #ff79da, $amount: 50%);
-    transform: scale(1.2);
-    border: none;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  }
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 40px 0;
   
+  .exploration-button {
+    height: 60px;
+    width: 200px;
+    color: $colour-white;
+    border-radius: 50px;
+    background: linear-gradient(
+      170deg,
+      $colour-primary 0%,
+      $colour-secondary 50%
+      );
+    cursor: pointer;
+    border: none;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    scale: 1;
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 0.15s;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+      opacity: 0.8;      
+      
+      background: linear-gradient(
+      170deg,
+      lighten($colour-primary, 5%) 0%,
+      lighten($colour-secondary, 5%) 50%,
+      );
+      box-shadow: 0px 2px 10px 0px #525252;
+    }
+  }
 }
 
 main {
@@ -127,14 +140,14 @@ main {
     .ol {
       list-style-type: none;
       padding-left: 10px;
-    @media (min-width:1000px) {
+    @media (min-width:992px) {
       display: flex;
       flex-direction: row;
     }
       &__li {
         display: flex;
         align-items: center;
-        background-color: whitesmoke;
+        background-color: $colour-whitesmoke;
         padding: 20px;
         margin: 10px 10px 10px 20px;
         border-radius: 20px;
@@ -172,7 +185,7 @@ main {
     }
   }
   .blocks {
-    @media (min-width:1000px) {
+    @media (min-width:992px) {
       display: flex;
       flex-direction: row;
       width: 100%;
@@ -189,7 +202,7 @@ main {
       color: black;
       text-decoration: none;
       
-      @media (min-width:1000px) {
+      @media (min-width:992px) {
         width: 300px;
       }
       &__new {
